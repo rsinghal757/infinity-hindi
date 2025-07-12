@@ -10,23 +10,28 @@ const chapters = (await getCollection("chapters")).sort(
   <h2 class="text-2xl font-bold mb-4">विषय-सूची</h2>
   <ul>
     {
-      chapters.map((chapter) => (
-        <li class="mb-2">
-          <a
-            href={`/${chapter.slug}/`}
-            class:list={[
-              "text-lg hover:text-blue-600",
-              {
-                "font-bold text-blue-700":
-                  Astro.url.pathname === `/${chapter.slug}/`,
-              },
-              { "text-gray-400 cursor-not-allowed": !chapter.data.published },
-            ]}
-          >
-            {chapter.data.title}
-          </a>
-        </li>
-      ))
+      chapters.map((chapter) => {
+        const chapterUrl = `${import.meta.env.BASE_URL}/${chapter.slug}/`.replace(
+          /^\/\//,
+          "/",
+        );
+        return (
+          <li class="mb-2">
+            <a
+              href={chapterUrl}
+              class:list={[
+                "text-lg hover:text-blue-600",
+                {
+                  "font-bold text-blue-700": Astro.url.pathname === chapterUrl,
+                },
+                { "text-gray-400 cursor-not-allowed": !chapter.data.published },
+              ]}
+            >
+              {chapter.data.title}
+            </a>
+          </li>
+        );
+      })
     }
   </ul>
 </nav>
