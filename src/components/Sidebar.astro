@@ -1,0 +1,33 @@
+---
+import { getCollection } from "astro:content";
+
+const chapters = (await getCollection("chapters")).sort(
+  (a, b) => a.data.chapter_number - b.data.chapter_number,
+);
+---
+
+<nav>
+  <h2 class="text-2xl font-bold mb-4">विषय-सूची</h2>
+  <ul>
+    {
+      chapters.map((chapter) => (
+        <li class="mb-2">
+          <a
+            href={`/${chapter.slug}/`}
+            class:list={[
+              "text-lg hover:text-blue-600",
+              {
+                "font-bold text-blue-700":
+                  Astro.url.pathname === `/${chapter.slug}/`,
+              },
+              { "text-gray-400 cursor-not-allowed": !chapter.data.published },
+            ]}
+          >
+            {chapter.data.title}
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</nav>
+
