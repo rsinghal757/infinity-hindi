@@ -1,1 +1,60 @@
 @import "tailwindcss";
+
+/* Enhanced typography for Hindi content */
+.prose {
+  max-width: none;
+  line-height: 1.8;
+}
+
+.prose h1 {
+  font-size: 1.875rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  margin-top: 2rem;
+  color: #111827;
+}
+
+.prose h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  margin-top: 1.5rem;
+  color: #111827;
+}
+
+.prose h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  margin-top: 1.25rem;
+  color: #111827;
+}
+
+.prose p {
+  margin-bottom: 1rem;
+  color: #1f2937;
+  line-height: 1.625;
+}
+
+.prose blockquote {
+  border-left: 4px solid #3b82f6;
+  padding-left: 1rem;
+  font-style: italic;
+  margin: 1rem 0;
+  color: #374151;
+}
+
+.prose strong {
+  font-weight: 700;
+  color: #111827;
+}
+
+.prose em {
+  font-style: italic;
+}
+
+/* Fix any potential font rendering issues */
+body {
+  font-feature-settings: "kern" 1;
+  text-rendering: optimizeLegibility;
+}
