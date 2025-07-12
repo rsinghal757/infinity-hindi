@@ -24,12 +24,12 @@ const { title } = Astro.props;
   <body class="bg-gray-50 text-gray-800">
     <div class="flex">
       <aside
-        class="w-1/4 h-screen sticky top-0 overflow-y-auto bg-gray-100 p-8"
+        class="w-1/5 h-screen sticky top-0 overflow-y-auto bg-gray-100 p-8"
       >
         <!-- Sidebar content will go here -->
         <slot name="sidebar" />
       </aside>
-      <main class="w-3/4 p-16">
+      <main class="w-4/5 p-16 px-48">
         <slot />
       </main>
     </div>

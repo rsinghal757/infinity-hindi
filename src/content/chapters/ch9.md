@@ -1,5 +1,5 @@
 ---
-title: "अध्याय 9"
+title: "आशावाद"
 chapter_number: 9
 published: false
 ---

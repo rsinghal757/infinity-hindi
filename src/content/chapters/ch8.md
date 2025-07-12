@@ -1,5 +1,5 @@
 ---
-title: "अध्याय 8"
+title: "अनंतता का एक झरोखा"
 chapter_number: 8
 published: false
 ---
