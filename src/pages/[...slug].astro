@@ -21,7 +21,7 @@ const { Content } = await entry.render();
   </div>
   
   <!-- Chapter Header -->
-  <header class="mb-12 border-b border-classic-gold/20 pb-8">
+  <header class="mb-12 border-b border-gray-300 pb-8">
     <p class="text-sm font-medium text-classic-charcoal-light mb-2 font-sans">
       अध्याय {entry.data.chapter_number}
     </p>
@@ -36,7 +36,7 @@ const { Content } = await entry.render();
   </article>
   
   <!-- Chapter Navigation -->
-  <nav class="mt-16 pt-8 border-t border-classic-gold/20" aria-label="Chapter navigation">
+  <nav class="mt-16 pt-8 border-t border-gray-300" aria-label="Chapter navigation">
     <div class="flex justify-between items-center">
       <div>
         {entry.data.chapter_number > 0 && (

@@ -17,134 +17,63 @@ const baseUrl = import.meta.env.BASE_URL;
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
-    <style>
-      .hero-section {
-        background: linear-gradient(135deg, #faf7f0 0%, #f5f1e8 100%);
-        min-height: 100vh;
-      }
-      
-      .author-image {
-        width: 200px;
-        height: 200px;
-        border-radius: 50%;
-        object-fit: cover;
-        border: 4px solid #d4af37;
-        box-shadow: 0 8px 25px rgba(30, 58, 95, 0.15);
-      }
-      
-      .title-main {
-        font-family: 'Crimson Text', Georgia, serif;
-        font-size: 3.5rem;
-        font-weight: 700;
-        color: #1e3a5f;
-        line-height: 1.1;
-        margin-bottom: 1rem;
-      }
-      
-      .title-sub {
-        font-family: 'Crimson Text', Georgia, serif;
-        font-size: 2rem;
-        font-weight: 400;
-        color: #34495e;
-        font-style: italic;
-        margin-bottom: 2rem;
-      }
-      
-      .author-name {
-        font-family: 'Inter', system-ui, sans-serif;
-        font-size: 1.25rem;
-        font-weight: 600;
-        color: #2c3e50;
-        margin-bottom: 0.5rem;
-      }
-      
-      .book-description {
-        font-family: 'Inter', system-ui, sans-serif;
-        font-size: 1.125rem;
-        line-height: 1.7;
-        color: #34495e;
-        max-width: 600px;
-        margin: 2rem auto;
-      }
-      
-      .ornamental-divider {
-        width: 100px;
-        height: 2px;
-        background: linear-gradient(90deg, transparent, #d4af37, transparent);
-        margin: 2rem auto;
-      }
-      
-      @media (max-width: 768px) {
-        .title-main {
-          font-size: 2.5rem;
-        }
-        .title-sub {
-          font-size: 1.5rem;
-        }
-        .author-image {
-          width: 150px;
-          height: 150px;
-        }
-      }
-    </style>
   </head>
   
-  <body class="hero-section">
-    <div class="flex flex-col items-center justify-center min-h-screen px-8 py-16">
-      <!-- Author Image -->
-      <div class="mb-8">
-        <img 
-          src={`${baseUrl}/favicon.png`} 
-          alt="David Deutsch" 
-          class="author-image"
-        />
-      </div>
-      
-      <!-- Book Title -->
-      <div class="text-center mb-8">
-        <h1 class="title-main">अनंतता की शुरुआत</h1>
-        <h2 class="title-sub">The Beginning of Infinity</h2>
-        
-        <!-- Ornamental Divider -->
-        <div class="ornamental-divider"></div>
-        
-        <p class="author-name">डेविड डॉयच (David Deutsch)</p>
-        <p class="text-base text-classic-charcoal-light font-medium">हिंदी अनुवाद</p>
-      </div>
-      
-      <!-- Book Description -->
-      <div class="text-center max-w-4xl">
-        <p class="book-description">
-          यह पुस्तक प्रगति की प्रकृति के बारे में है—वैज्ञानिक, राजनीतिक, नैतिक और कलात्मक। यह दिखाती है कि सारी प्रगति 
-          एक ही मानवीय गतिविधि का परिणाम है: <strong>अच्छी व्याख्याओं की खोज</strong>। यह एक ऐसी यात्रा है जो हमें 
-          भौतिकी से लेकर दर्शन तक, कंप्यूटिंग से लेकर राजनीति तक ले जाती है, और दिखाती है कि असीमित प्रगति 
-          न केवल संभव है, बल्कि अपरिहार्य है।
-        </p>
-        
-        <div class="ornamental-divider"></div>
-        
-        <!-- Call to Action -->
-        <div class="mt-12">
-          <a 
-            href={`${baseUrl}/ch0/`.replace(/\/+/g, "/")} 
-            class="btn-primary inline-flex items-center space-x-2"
-          >
-            <span>पढ़ना शुरू करें</span>
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
-            </svg>
-          </a>
+  <body class="bg-classic-cream font-sans text-classic-charcoal antialiased">
+    <div class="flex flex-col lg:flex-row min-h-screen">
+
+      <!-- Left Side: Book Title & Info -->
+      <div class="flex-1 lg:w-1/2 flex flex-col justify-center items-center lg:items-start text-center lg:text-left p-8 lg:p-16 xl:p-24 bg-gradient-to-br from-classic-cream to-classic-cream-dark">
+        <div class="max-w-md w-full">
+          <h1 class="font-serif text-5xl lg:text-6xl xl:text-7xl font-bold text-classic-navy leading-tight">
+            अनंतता की शुरुआत
+          </h1>
+          <h2 class="font-serif text-2xl lg:text-3xl italic text-classic-charcoal-light mt-4">
+            The Beginning of Infinity
+          </h2>
+          
+          <div class="w-24 h-px bg-gray-300 my-8 mx-auto lg:mx-0"></div>
+          
+          <p class="text-xl font-semibold text-classic-charcoal">
+            डेविड डॉयच (David Deutsch)
+          </p>
+          <p class="mt-1 text-base text-classic-charcoal-light font-medium">
+            हिंदी अनुवाद
+          </p>
         </div>
-        
-        <!-- Additional Info -->
-        <div class="mt-16 text-center">
-          <p class="text-sm text-classic-charcoal-light">
-            मूल कृति: "The Beginning of Infinity: Explanations that Transform the World" (2011)
+      </div>
+      
+      <!-- Right Side: Author, Description, CTA -->
+      <div class="flex-1 lg:w-1/2 flex flex-col justify-center items-center p-8 lg:p-16 xl:p-24 bg-classic-cream">
+        <div class="max-w-md w-full text-center">
+          
+          <img 
+            src={`${baseUrl}/favicon.png`} 
+            alt="David Deutsch" 
+            class="w-32 h-32 lg:w-40 lg:h-40 rounded-full object-cover border-4 border-white shadow-xl mx-auto mb-8"
+          />
+
+          <p class="text-lg leading-relaxed text-classic-charcoal-light">
+            यह पुस्तक प्रगति की प्रकृति के बारे में है—वैज्ञानिक, राजनीतिक, नैतिक और कलात्मक। यह दिखाती है कि सारी प्रगति 
+            एक ही मानवीय गतिविधि का परिणाम है: <strong>अच्छी व्याख्याओं की खोज</strong>।
           </p>
-          <p class="text-sm text-classic-charcoal-light mt-2">
-            लेखक: डेविड डॉयच, Oxford University के भौतिकशास्त्री और दार्शनिक
-          </p>
+
+          <div class="mt-10">
+            <a 
+              href={`${baseUrl}/ch0/`.replace(/\/+/g, "/")} 
+              class="btn-primary inline-flex items-center space-x-2"
+            >
+              <span>पढ़ना शुरू करें</span>
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+              </svg>
+            </a>
+          </div>
+
+          <div class="mt-12 text-xs text-classic-charcoal-light/70 space-y-1">
+            <p>मूल कृति: "The Beginning of Infinity: Explanations that Transform the World" (2011)</p>
+            <p>लेखक: डेविड डॉयच, Oxford University के भौतिकशास्त्री और दार्शनिक</p>
+          </div>
         </div>
       </div>
     </div>
