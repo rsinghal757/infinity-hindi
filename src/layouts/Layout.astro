@@ -21,9 +21,9 @@ const { title } = Astro.props;
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
-  <body class="bg-gray-50 text-gray-800">
+  <body class="bg-classic-cream text-classic-charcoal">
     <!-- Mobile menu button -->
-    <button id="menu-btn" class="md:hidden fixed top-4 right-4 z-20 p-2 rounded-md bg-gray-200/50 text-gray-800 hover:text-gray-600 focus:outline-none focus:text-gray-600">
+    <button id="menu-btn" class="md:hidden fixed top-4 right-4 z-20 p-3 rounded-lg bg-white/90 text-classic-navy hover:text-classic-navy-light focus:outline-none focus:text-classic-navy-light shadow-lg border border-classic-gold/20">
       <svg class="h-6 w-6" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
         <path d="M4 6h16M4 12h16m-7 6h7"></path>
       </svg>
@@ -33,15 +33,17 @@ const { title } = Astro.props;
       <!-- Sidebar -->
       <aside
         id="sidebar"
-        class="transform -translate-x-full md:translate-x-0 transition-transform duration-200 ease-in-out bg-gray-100 p-8 fixed md:sticky md:top-0 md:w-72 h-screen overflow-y-auto z-10"
+        class="transform -translate-x-full md:translate-x-0 transition-transform duration-300 ease-in-out bg-white/95 backdrop-blur-sm p-8 fixed md:sticky md:top-0 md:w-80 h-screen overflow-y-auto z-10 border-r border-classic-gold/20 shadow-xl"
       >
         <!-- Sidebar content will go here -->
         <slot name="sidebar" />
       </aside>
 
       <!-- Main content -->
-      <main class="w-full md:flex-1 p-8 md:p-16 md:px-24 lg:px-48">
-        <slot />
+      <main class="w-full md:flex-1 p-8 md:p-16 md:px-24 lg:px-48 bg-classic-cream">
+        <div class="max-w-4xl mx-auto">
+          <slot />
+        </div>
       </main>
     </div>
 
