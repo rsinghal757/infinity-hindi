@@ -22,17 +22,49 @@ const { title } = Astro.props;
     <title>{title}</title>
   </head>
   <body class="bg-gray-50 text-gray-800">
-    <div class="flex">
+    <!-- Mobile menu button -->
+    <button id="menu-btn" class="md:hidden fixed top-4 right-4 z-20 p-2 rounded-md bg-gray-200/50 text-gray-800 hover:text-gray-600 focus:outline-none focus:text-gray-600">
+      <svg class="h-6 w-6" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
+        <path d="M4 6h16M4 12h16m-7 6h7"></path>
+      </svg>
+    </button>
+
+    <div class="relative min-h-screen md:flex">
+      <!-- Sidebar -->
       <aside
-        class="w-1/5 h-screen sticky top-0 overflow-y-auto bg-gray-100 p-8"
+        id="sidebar"
+        class="transform -translate-x-full md:translate-x-0 transition-transform duration-200 ease-in-out w-64 bg-gray-100 p-8 fixed md:sticky md:top-0 md:w-1/5 h-screen overflow-y-auto z-10"
       >
         <!-- Sidebar content will go here -->
         <slot name="sidebar" />
       </aside>
-      <main class="w-4/5 p-16 px-48">
+
+      <!-- Main content -->
+      <main class="w-full p-8 md:p-16 md:px-24 lg:px-48">
         <slot />
       </main>
     </div>
+
+    <script>
+      const menuBtn = document.getElementById('menu-btn');
+      const sidebar = document.getElementById('sidebar');
+
+      if (menuBtn && sidebar) {
+        menuBtn.addEventListener('click', () => {
+          sidebar.classList.toggle('-translate-x-full');
+        });
+
+        // Optional: Close sidebar when clicking outside of it on mobile
+        document.addEventListener('click', (event) => {
+          const isClickInsideSidebar = sidebar.contains(event.target as Node);
+          const isClickOnMenuBtn = menuBtn.contains(event.target as Node);
+
+          if (!isClickInsideSidebar && !isClickOnMenuBtn && !sidebar.classList.contains('-translate-x-full')) {
+              sidebar.classList.add('-translate-x-full');
+          }
+        });
+      }
+    </script>
   </body>
 </html>
 
